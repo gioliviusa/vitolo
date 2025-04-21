@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitolo | Authentic Italian Restaurant | Fort Lauderdale Beach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        :root {
+            --primary: #c1121f;
+            --primary-dark: #780000;
+            --secondary: #fdf0d5;
+            --dark: #003049;
+            --light: #ffffff;
+            --gold: #d4a017;
+            --text: #333333;
+            --text-light: #777777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       .hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        }
+
+       .video-background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        }
+
+       .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        }
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding-top: 20vh;
+}
+
+/* Mobile-first CSS */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 20vh 5% 0;
+}
+
+/* Desktop enhancements */
+@media (min-width: 768px) {
+  .video-container iframe {
+    width: 100vw;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    min-height: 100vh;
+    min-width: 177.77vh; /* 16:9 aspect ratio */
+  }
+  
+  .hero-content {
+    padding-top: 30vh;
+  }
+}
+
+/* Mobile landscape adjustment */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero-content {
+    padding-top: 10vh;
+  }
+}
+
+/* Optional: Add backdrop for better text contrast */
+/* .hero-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: -1;
+} */
+
+
+
+
+
+
+
+
+
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+        }
+
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background-color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .nav-cta:after {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+       .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            color: var(--light);
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Rest of the CSS remains the same */
+
+        .hero h1 {
+            font-size: 72px;
+            margin-top:60px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--light);
+            font-size: 24px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 15px auto 0;
+            line-height: 1.6;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--dark);
+        }
+
+        /* Menu Section */
+        .menu {
+            background-color: var(--secondary);
+            
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .menu-tab {
+            padding: 10px 25px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-tab.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .menu-tab:hover:not(.active) {
+            color: var(--text);
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-item-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 25px;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .menu-item-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .menu-item-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .menu-item-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--light);
+            font-size: 40px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--dark);
+            color: var(--light);
+        }
+
+        .testimonials .section-title h2 {
+            color: var(--light);
+        }
+
+        .testimonials .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            text-align: center;
+            padding: 0 20px;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-text {
+            font-size: 20px;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            font-size: 50px;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .testimonial-text:before {
+            top: -30px;
+            left: -20px;
+        }
+
+        .testimonial-text:after {
+            bottom: -50px;
+            right: -20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .testimonial-author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .testimonial-author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author-info p {
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary);
+        }
+
+        /* Reservation Section */
+        .reservation {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://vitoloitalian.com/wp-content/uploads/2023/04/hero-2.jpg') no-repeat center center/cover;
+            color: var(--light);
+        }
+
+        .reservation .section-title h2 {
+            color: var(--light);
+        }
+
+        .reservation .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .reservation-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto 0;
+            min-width: 200px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background-color: var(--secondary);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .contact-card p, .contact-card a {
+            color: var(--text-light);
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 30px;
+            color: var(--light);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 30px;
+        }
+
+        .mobile-menu ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .reservation-form {
+                padding: 30px 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <img src="restaurant-001/Vitologo_logo.png" alt="Vitolo Italian Restaurant">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="https://gioliviusa.github.io/Project-1/">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#reservation">Reservations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="nav-cta" target="_blank">Book</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="https://gioliviusa.github.io/Project-1/">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reservation">Reservations</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="nav-cta" target="_blank">Book a Table</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <!-- Hero Section with YouTube Background Video -->
+    <section class="hero">
+      <div class="video-background">
+      <iframe 
+      src="https://www.youtube.com/embed/VCJFkNIRV68?autoplay=1&loop=1&mute=1&controls=0&playlist=VCJFkNIRV68" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen
+      ></iframe>
+      </div>
+<!--   <div class="hero-content">
+      <h1>Your compelling headline here</h1>
+      <p>Your engaging subtitle text goes here</p>
+      <a href="#cta" class="cta-button">Call to Action</a>
+      </div> -->
+    </section>
+
+
+
+
+
+    
+<!--     <section class="hero" id="home"> -->
+    <section class="hero">
+          <div class="video-container">
+           <iframe 
+            src="https://www.youtube.com/embed/VCJFkNIRV68?autoplay=1&loop=1&mute=1&controls=0&playsinline=1&playlist=VCJFkNIRV68" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture" 
+            allowfullscreen
+           ></iframe>
+          </div>
+         <div class="container">
+            <div class="hero-content">
+                <h1>Authentic Italian Cuisine in Fort Lauderdale Beach</h1>
+                <p>Experience the taste of Italy with our handcrafted dishes made from the finest ingredients. Located in the Conrad Fort Lauderdale Beach, Vitolo offers an unforgettable dining experience.</p>
+                 <div class="hero-btns">
+                    <a href="#menu" class="btn btn-primary">View Menu</a>
+                    <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-secondary" target="_blank">Reserve a Table</a>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>Discover the passion behind Vitolo, where traditional Italian recipes meet modern culinary artistry.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="restaurant-001/vitolokitchen.png" alt="Vitolo Restaurant Interior">
+                </div>
+                <div class="about-text">
+                    <h3>A Taste of Italy in Fort Lauderdale</h3>
+                    <p>Vitolo brings authentic Italian cuisine to Fort Lauderdale Beach, offering a menu that celebrates Italy's rich culinary traditions with a modern touch. Our chef-driven approach focuses on quality ingredients and time-honored techniques.</p>
+                    <p>From handmade pastas to wood-fired pizzas and fresh seafood, each dish tells a story of Italian heritage and passion for food. Our extensive wine list features selections from Italy's finest regions, perfectly paired to complement your meal.</p>
+                    <p>Whether you're joining us for a romantic dinner, family celebration, or business meeting, we promise an unforgettable culinary journey through Italy's diverse regions in our elegant yet comfortable setting.</p>
+                    <div class="signature">Buon Appetito!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+     <!-- Updated Menu Section -->
+     <section class="section menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Explore our selection of authentic Italian dishes crafted with passion and the finest ingredients.</p>
+            </div>
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="antipasti">Antipasti</button>
+                <button class="menu-tab" data-category="insalate">Insalate</button>
+                <button class="menu-tab" data-category="pizza">Pizza</button>
+                <button class="menu-tab" data-category="pasta">Pasta</button>
+                <button class="menu-tab" data-category="carne">Carne</button>
+                <button class="menu-tab" data-category="mare">Dal Mare</button>
+                <button class="menu-tab" data-category="contorni">Sides</button>
+            </div>
+            <div class="menu-items">
+                <!-- Antipasti -->
+                <div class="menu-item" data-category="antipasti">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/antipasto.jpg" alt="Antipasto Della Casa">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Antipasto Della Casa (for 2)</h3>
+                            <div class="menu-item-price">$38</div>
+                        </div>
+                        <p class="menu-item-desc">Olives & Italian cured meats. Add premium cheeses +$19pp (D)</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="antipasti">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/burrata.jpg" alt="Burrata">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Burrata</h3>
+                            <div class="menu-item-price">$30</div>
+                        </div>
+                        <p class="menu-item-desc">Roasted red peppers, San Daniele prosciutto, balsamic reduction & fresh basil (D)</p>
+                    </div>
+                </div>
+
+                <!-- Insalate -->
+                <div class="menu-item" data-category="insalate">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/salad.jpg" alt="Mista Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Mista</h3>
+                            <div class="menu-item-price">$16</div>
+                        </div>
+                        <p class="menu-item-desc">Mixed house salad with extra virgin olive oil & vinegar</p>
+                    </div>
+                </div>
+
+                <!-- Pizza -->
+                <div class="menu-item" data-category="pizza">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/margherita.jpg" alt="Queen Margherita">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Queen Margherita</h3>
+                            <div class="menu-item-price">$24</div>
+                        </div>
+                        <p class="menu-item-desc">San Marzano tomatoes, mozzarella, basil, EVOO (D,G)</p>
+                    </div>
+                </div>
+
+                <!-- Pasta -->
+                <div class="menu-item" data-category="pasta">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/lobster-ravioli.jpg" alt="Lobster Ravioli">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Lobster Ravioli</h3>
+                            <div class="menu-item-price">$42</div>
+                        </div>
+                        <p class="menu-item-desc">Lobster-filled ravioli with lobster cream sauce & shrimp (D,E,F,G)</p>
+                    </div>
+                </div>
+
+                <!-- Carne -->
+                <div class="menu-item" data-category="carne">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/veal-chop.jpg" alt="Vitello Antonio">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Vitello Antonio (for 2)</h3>
+                            <div class="menu-item-price">$92</div>
+                        </div>
+                        <p class="menu-item-desc">Center cut veal chop with panko crust, sweet peas, prosciutto, marinara cream sauce (D,E,G)</p>
+                    </div>
+                </div>
+
+                <!-- Dal Mare -->
+                <div class="menu-item" data-category="mare">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/lobster-fra-diavolo.jpg" alt="Lobster Fra Diavolo">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Lobster Fra Diavolo</h3>
+                            <div class="menu-item-price">$58</div>
+                        </div>
+                        <p class="menu-item-desc">Main lobster in spicy pomodoro with Calabrian chiles sauce & linguini (G,F)</p>
+                    </div>
+                </div>
+
+                <!-- Sides -->
+                <div class="menu-item" data-category="contorni">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/rosemary-potatoes.jpg" alt="Rosemary Potatoes">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Rosemary Potatoes</h3>
+                            <div class="menu-item-price">$14</div>
+                        </div>
+                        <p class="menu-item-desc">Crispy roasted potatoes with fresh rosemary (D)</p>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Dolci -->
+                <div class="menu-item" data-category="dolci">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/tiramisu.jpg" alt="Tiramisu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Tiramisu</h3>
+                            <div class="menu-item-price">$12</div>
+                        </div>
+                        <p class="menu-item-desc">Classic Italian dessert with layers of espresso-soaked ladyfingers and mascarpone cream.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="dolci">
+                    <div class="menu-item-img">
+                        <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/cannoli.jpg" alt="Cannoli">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Cannoli Siciliani</h3>
+                            <div class="menu-item-price">$10</div>
+                        </div>
+                        <p class="menu-item-desc">Crisp pastry shells filled with sweet ricotta, chocolate chips, and candied orange.</p>
+                    </div>
+                </div>
+                <!-- Add remaining menu items following the same pattern -->
+
+                
+
+
+
+
+
+                
+
+            </div>
+            
+            <!-- Allergen Key -->
+            <div class="allergen-key" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+                <h4>Allergen Key:</h4>
+                <p>D-Dairy, G-Gluten, E-Eggs, N-Nuts, F-Fish/Shellfish, S-Soy</p>
+                <p style="color: var(--text-light); font-size: 0.9em; margin-top: 10px;">
+                    *Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remaining sections (Gallery, Testimonials, Reservation, Contact, Footer) remain unchanged -->
+
+                  
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>A glimpse into our restaurant, dishes, and the vibrant atmosphere at Vitolo.</p>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="restaurant-001/vitolokitchen.png" alt="Restaurant Interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="restaurant-001/vitoloout.png" alt="Pasta Dish">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="restaurant-001/vitolokitchen.png" alt="Dining Area">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/gallery-4.jpg" alt="Chef Preparing Food">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/gallery-5.jpg" alt="Wine Selection">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/gallery-6.jpg" alt="Dessert">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Guests Say</h2>
+                <p>Hear from our valued customers about their experiences at Vitolo.</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-text">
+                        The best Italian food I've had outside of Italy! The pasta was perfectly al dente and the flavors were incredible. The service was impeccable and the atmosphere was perfect for our anniversary dinner.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Fort Lauderdale, FL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        As an Italian expat, I'm very particular about my Italian food. Vitolo exceeded all my expectations. The osso buco was tender and flavorful, just like my nonna used to make. I'll definitely be back!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marco Rossi">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Marco Rossi</h4>
+                            <p>Miami, FL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        We hosted our company dinner at Vitolo and it was a fantastic experience. The private dining area was beautiful, the food was outstanding, and the staff handled everything perfectly. Highly recommend for business or pleasure!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Lee">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Jennifer Lee</h4>
+                            <p>CEO, Tech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="section reservation" id="reservation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Make a Reservation</h2>
+                <p>Book your table at Vitolo for an unforgettable Italian dining experience.</p>
+            </div>
+            <div class="reservation-cta">
+                <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-primary" target="_blank">Reserve on OpenTable</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for reservations, inquiries, or special events.</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Conrad Fort Lauderdale Beach<br>551 N Fort Lauderdale Beach Blvd<br>Fort Lauderdale, FL 33304</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+19543218765">(954) 321-8765</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@vitoloitalian.com">info@vitoloitalian.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Hours</h3>
+                    <p><strong>Monday - Thursday:</strong> 5:00 PM - 10:00 PM</p>
+                    <p><strong>Friday - Saturday:</strong> 5:00 PM - 11:00 PM</p>
+                    <p><strong>Sunday:</strong> 5:00 PM - 9:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About Vitolo</h3>
+                    <p>Vitolo brings authentic Italian cuisine to Fort Lauderdale Beach, combining traditional recipes with modern techniques for an unforgettable dining experience.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/vitoloitalian" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/vitoloitalian/#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com/vitoloitalian" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.yelp.com/biz/vitolo-fort-lauderdale" target="_blank"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#reservation">Reservations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Menu Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#menu" data-category="antipasti">Antipasti</a></li>
+                        <li><a href="#menu" data-category="pasta">Pasta</a></li>
+                        <li><a href="#menu" data-category="secondi">Secondi</a></li>
+                        <li><a href="#menu" data-category="pizza">Pizza</a></li>
+                        <li><a href="#menu" data-category="dolci">Desserts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for special offers, events, and seasonal menus.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vitolo Italian Restaurant. All Rights Reserved. made by giolivi | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Menu tab functionality
+            const menuTabs = document.querySelectorAll('.menu-tab');
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            menuTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    menuTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show/hide menu items based on category
+                    menuItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Testimonial slider
+            const testimonials = document.querySelectorAll('.testimonial');
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                testimonialDots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonials[index].classList.add('active');
+                testimonialDots[index].classList.add('active');
+                currentTestimonial = index;
+            }
+            
+            testimonialDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showTestimonial(index);
+                });
+            });
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+        });
+      
+       // Previous JavaScript remains the same
+        
+        // Add video fallback for mobile devices if needed
+        function checkVideoSupport() {
+            const video = document.querySelector('.hero-video');
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // On mobile, you might want to use a poster image instead
+                const poster = video.querySelector('img');
+                if (poster) {
+                    video.parentNode.replaceChild(poster, video);
+                }
+            } else {
+                // Ensure video plays on desktop
+                video.play().catch(e => {
+                    console.log("Video autoplay prevented, showing fallback image");
+                    const poster = video.querySelector('img');
+                    if (poster) {
+                        video.parentNode.replaceChild(poster, video);
+                    }
+                });
+            }
+        }
+        
+        // Call the function when DOM is loaded
+        document.addEventListener('DOMContentLoaded', checkVideoSupport);
+    </script>
+</body>
+</html>
