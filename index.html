@@ -97,6 +97,8 @@
   text-align: center;
   color: white;
   padding: 20vh 5% 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Desktop enhancements */
@@ -109,7 +111,7 @@
   }
   
   .hero-content {
-    padding-top: 30vh;
+    padding-top: 25vh;
   }
 }
 
@@ -348,26 +350,7 @@
         }
 
         .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--light);
-            font-size: 24px;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-20px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-10px) translateX(-50%);
-            }
+            display: none;
         }
 
         /* About Section */
@@ -456,8 +439,9 @@
 
         /* Menu Section */
         .menu {
-            background-color: var(--secondary);
-            
+            background-color: transparent;
+            position: relative;
+            z-index: 1;
         }
 
         .menu-tabs {
@@ -789,7 +773,9 @@
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: block;
+            /* display: flex; */
+            align-self: center;
+            justify-content: center;
             margin: 30px auto 0;
             min-width: 200px;
         }
@@ -1079,6 +1065,98 @@
                 padding: 70px 0;
             }
         }
+
+        /* Further adjustments to ensure the hero section is fully visible */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 5%;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding-top: 15vh;
+  }
+}
+
+/* Centering the reservation button */
+.reservation-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Updated background for Our Story section */
+        #about {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        #about .section-title h2 {
+            color: var(--primary);
+        }
+
+        #about .section-title p {
+            color: var(--text);
+        }
+
+        #about .about-text p {
+            color: var(--text);
+        }
+
+        /* Updated background for Chef Anthony Vitolo section */
+        #chef-anthony {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        #chef-anthony .section-title h2 {
+            color: var(--primary);
+        }
+
+        #chef-anthony .section-title p {
+            color: var(--text);
+        }
+
+        #chef-anthony .about-text p {
+            color: var(--text);
+        }
     </style>
 </head>
 <body>
@@ -1086,7 +1164,7 @@
     <header id="header">
         <div class="container header-container">
             <a href="#home" class="logo">
-                <img src="restaurant-001/Vitologo_logo.png" alt="Vitolo Italian Restaurant">
+                <img src="images/Vitologo_logo.png" alt="Vitolo Italian Restaurant">
             </a>
             <nav>
                 <ul>
@@ -1178,7 +1256,7 @@
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="restaurant-001/vitolokitchen.png" alt="Vitolo Restaurant Interior">
+                    <img src="images/vitolokitchen.png" alt="Vitolo Restaurant Interior">
                 </div>
                 <div class="about-text">
                     <h3>A Taste of Italy in Fort Lauderdale</h3>
@@ -1190,6 +1268,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Chef Anthony Vitolo Section -->
+<section class="section" id="chef-anthony">
+    <div class="container">
+        <div class="section-title">
+            <h2>Meet Chef Anthony Vitolo</h2>
+            <p>Discover the culinary mastermind behind Vitolo's authentic Italian cuisine.</p>
+        </div>
+        <div class="about-content">
+            <div class="about-img">
+                <img src="images/libraryvitolo.jpg" alt="Chef Anthony Vitolo">
+            </div>
+            <div class="about-text">
+                <h3>A Legacy of Culinary Excellence</h3>
+                <p>Chef Anthony Vitolo brings decades of experience and a deep passion for Italian cuisine to every dish he creates. Born and raised in Italy, Chef Vitolo honed his skills in some of the most prestigious kitchens across Europe before bringing his talents to Fort Lauderdale Beach.</p>
+                <p>His philosophy is simple: use the finest ingredients, respect traditional techniques, and always cook with love. From handmade pastas to innovative takes on classic recipes, Chef Vitolo's menu is a celebration of Italy's rich culinary heritage.</p>
+                <p>Join us at Vitolo to experience the artistry and dedication of Chef Anthony Vitolo, where every meal is a journey through the flavors of Italy.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Menu Section -->
      <!-- Updated Menu Section -->
@@ -1305,7 +1404,6 @@
                 <div class="menu-item" data-category="insalate">
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <h3 class="menu-item-title">Caesar</h3>
                             <div class="menu-item-price">$18</div>
                         </div>
                         <p class="menu-item-desc">Crispy romaine lettuce with house made Caesar dressing, crispy croutons (D,E,F,G,S)</p>
@@ -1562,25 +1660,25 @@
             </div>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="restaurant-001/vitolokitchen.png" alt="Restaurant Interior">
+                    <img src="images/vitolokitchen.png" alt="Restaurant Interior">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="restaurant-001/vitoloout.png" alt="Pasta Dish">
+                    <img src="images/vitoloout.png" alt="Outdoor Dining Area">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="restaurant-001/vitolokitchen.png" alt="Dining Area">
+                    <img src="images/vitolomain.png" alt="Main Dining Area">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://vitoloitalian.com/wp-content/uploads/2023/04/gallery-4.jpg" alt="Chef Preparing Food">
+                    <img src="images/libraryvitolo.jpg" alt="Chef Preparing Food">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
