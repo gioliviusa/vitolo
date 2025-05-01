@@ -26,123 +26,113 @@
             padding: 0;
             box-sizing: border-box;
         }
-       .hero {
-        position: relative;
-        height: 100vh;
-        overflow: hidden;
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
         }
 
-       .video-background {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -1;
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
-       .video-background iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
+        .video-background iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding-top: 20vh;
-}
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding-top: 20vh;
+        }
 
-/* Mobile-first CSS */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
+        /* Mobile-first CSS */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
 
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-}
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
 
-.video-container iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding: 20vh 5% 0;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 20vh 5% 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* Desktop enhancements */
-@media (min-width: 768px) {
-  .video-container iframe {
-    width: 100vw;
-    height: 56.25vw; /* 16:9 aspect ratio */
-    min-height: 100vh;
-    min-width: 177.77vh; /* 16:9 aspect ratio */
-  }
-  
-  .hero-content {
-    padding-top: 25vh;
-  }
-}
+        /* Desktop enhancements */
+        @media (min-width: 768px) {
+            .video-container iframe {
+                width: 100vw;
+                height: 56.25vw; /* 16:9 aspect ratio */
+                min-height: 100vh;
+                min-width: 177.77vh; /* 16:9 aspect ratio */
+            }
 
-/* Mobile landscape adjustment */
-@media (max-height: 480px) and (orientation: landscape) {
-  .hero-content {
-    padding-top: 10vh;
-  }
-}
+            .hero-content {
+                padding-top: 25vh;
+            }
+        }
 
-/* Optional: Add backdrop for better text contrast */
-/* .hero-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: -1;
-} */
+        /* Mobile landscape adjustment */
+        @media (max-height: 480px) and (orientation: landscape) {
+            .hero-content {
+                padding-top: 10vh;
+            }
+        }
 
+        /* Optional: Add backdrop for better text contrast */
+        /* .hero-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: -1;
+        } */
 
-
-
-
-
-
-
-
-        
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--text);
@@ -262,7 +252,7 @@
         }
 
         /* Hero Section */
-       .hero {
+        .hero {
             height: 100vh;
             min-height: 700px;
             position: relative;
@@ -301,7 +291,7 @@
 
         .hero h1 {
             font-size: 72px;
-            margin-top:60px;
+            margin-top: 60px;
             margin-bottom: 20px;
             line-height: 1.2;
         }
@@ -493,22 +483,6 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* .menu-item-img {
-            height: 200px;
-            overflow: hidden;
-        } */
-
-        /* .menu-item-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .menu-item:hover .menu-item-img img {
-            transform: scale(1.1);
-        } */
-
         .menu-item-content {
             padding: 25px;
         }
@@ -617,8 +591,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .testimonial-text {
@@ -742,7 +721,9 @@
             font-weight: 500;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 12px 15px;
             background-color: rgba(255, 255, 255, 0.1);
@@ -753,13 +734,16 @@
             transition: all 0.3s ease;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             outline: none;
             border-color: var(--primary);
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        input::placeholder, textarea::placeholder {
+        input::placeholder,
+        textarea::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
 
@@ -773,7 +757,6 @@
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
-            /* display: flex; */
             align-self: center;
             justify-content: center;
             margin: 30px auto 0;
@@ -818,7 +801,8 @@
             font-size: 22px;
         }
 
-        .contact-card p, .contact-card a {
+        .contact-card p,
+        .contact-card a {
             color: var(--text-light);
             line-height: 1.6;
             text-decoration: none;
@@ -828,27 +812,19 @@
             color: var(--primary);
         }
 
-
-
         /* Add to your existing CSS */
         .reservation-cta {
-         display: flex;
-         justify-content: center;
-         margin-top: 30px;
-}
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
 
-/* If you want it centered both horizontally and vertically in the section */
+        /* If you want it centered both horizontally and vertically in the section */
         .reservation {
-         display: flex;
-         align-items: center;
-         min-height: 50vh; /* Adjust height as needed */
-}
-
-
-
-
-
-        
+            display: flex;
+            align-items: center;
+            min-height: 50vh;
+        }
 
         /* Footer */
         footer {
@@ -1027,7 +1003,8 @@
                 flex-direction: column;
             }
 
-            .about-img, .about-text {
+            .about-img,
+            .about-text {
                 flex: none;
                 width: 100%;
             }
@@ -1089,62 +1066,63 @@
         }
 
         /* Further adjustments to ensure the hero section is fully visible */
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  overflow: hidden;
-}
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 0 5%;
-  max-width: 800px;
-  margin: auto;
-  animation: fadeIn 1.5s ease-in-out;
-}
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 5%;
+            max-width: 800px;
+            margin: auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-.video-container iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-@media (min-width: 1024px) {
-  .hero-content {
-    padding-top: 15vh;
-  }
-}
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
 
-/* Centering the reservation button */
-.reservation-cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
+        @media (min-width: 1024px) {
+            .hero-content {
+                padding-top: 15vh;
+            }
+        }
 
-/* Updated background for Our Story section */
+        /* Centering the reservation button */
+        .reservation-cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Updated background for Our Story section */
         #about {
             background-color: var(--secondary);
             color: var(--dark);
@@ -1230,41 +1208,33 @@
     <!-- Hero Section -->
     <!-- Hero Section with YouTube Background Video -->
     <section class="hero">
-      <div class="video-background">
-      <!-- <iframe  -->
-      <!-- src="#"  -->
-      <!-- frameborder="0"  -->
-      <!-- allow="autoplay; encrypted-media"  -->
-      <!-- allowfullscreen -->
-      <!-- ></iframe> -->
-      </div>
-<!--   <div class="hero-content">
+        <div class="video-background">
+            <!-- <iframe -->
+            <!-- src="#" -->
+            <!-- frameborder="0" -->
+            <!-- allow="autoplay; encrypted-media" -->
+            <!-- allowfullscreen -->
+            <!-- ></iframe> -->
+        </div>
+        <!--   <div class="hero-content">
       <h1>Your compelling headline here</h1>
       <p>Your engaging subtitle text goes here</p>
       <a href="#cta" class="cta-button">Call to Action</a>
       </div> -->
     </section>
 
-
-
-
-
-    
-<!--     <section class="hero" id="home"> -->
     <section class="hero">
-          <div class="video-container">
-           <iframe 
-            src="images/vitolo_short3-30sec.mp4" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture" 
-            allowfullscreen
-           ></iframe>
-          </div>
-         <div class="container">
+        <div class="video-container">
+            <video autoplay loop muted playsinline class="video-background">
+                <source src="images/vitolo_short3-30sec.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="container">
             <div class="hero-content">
                 <h1>Authentic Italian Cuisine in Fort Lauderdale Beach</h1>
                 <p>Experience the taste of Italy with our handcrafted dishes made from the finest ingredients. Located in the Conrad Fort Lauderdale Beach, Vitolo offers an unforgettable dining experience.</p>
-                 <div class="hero-btns">
+                <div class="hero-btns">
                     <a href="#menu" class="btn btn-primary">View Menu</a>
                     <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-secondary" target="_blank">Reserve a Table</a>
                 </div>
@@ -1298,34 +1268,34 @@
     </section>
 
     <!-- Chef Anthony Vitolo Section -->
-<section class="section" id="chef-anthony">
-    <div class="container">
-        <div class="section-title">
-            <h2>Meet Chef Anthony Vitolo</h2>
-            <p>Discover the culinary mastermind behind Vitolo's authentic Italian cuisine.</p>
-        </div>
-        <div class="about-content">
-            <div class="about-img">
-                <img src="images/Anthony3.jpg" alt="Chef Anthony Vitolo">
+    <section class="section" id="chef-anthony">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Chef Anthony Vitolo</h2>
+                <p>Discover the culinary mastermind behind Vitolo's authentic Italian cuisine.</p>
             </div>
-            <div class="about-text">
-                <h3>A Legacy of Culinary Excellence</h3>
-                <p> At Vitolo, Chef Anthony Vitolo brings the soul of New York’s beloved Italian cuisine to Fort Lauderdale, infusing every dish with generations of family tradition.</p>
-                <p> Known for his Manhattan hotspot Emilio’s Ballato —a favorite among celebrities like Taylor Swift, Al Pacino, and Gabrielle Union—Chef Vitolo delivers the same warmth and authenticity in every bite. </p> 
-                    
-                <p>His Neapolitan-inspired dishes celebrate simplicity and quality, from slow-cooked tagliatelle bolognese to crispy, cheesy Italian-American classics. Pair your meal with a handcrafted cocktail like the smoky Emilio’s Manhattan or a refreshing Lena Limon-a for the full experience. </p> 
-                    
-                <p>Here, it’s not about flashy gimmicks—just honest, flavorful food made with the finest ingredients and a whole lot of love. As Taylor Swift and her friends can attest, once you taste Chef Vitolo’s cooking, you’ll keep coming back for more.</p>
-                <p>His philosophy is simple: use the finest ingredients, respect traditional techniques, and always cook with love. From handmade pastas to innovative takes on classic recipes, Chef Vitolo's menu is a celebration of Italy's rich culinary heritage.</p>
-                <p>Join us at Vitolo to experience the artistry and dedication of Chef Anthony Vitolo, where every meal is a journey through the flavors of Italy.</p>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/Anthony3.jpg" alt="Chef Anthony Vitolo">
+                </div>
+                <div class="about-text">
+                    <h3>A Legacy of Culinary Excellence</h3>
+                    <p> At Vitolo, Chef Anthony Vitolo brings the soul of New York’s beloved Italian cuisine to Fort Lauderdale, infusing every dish with generations of family tradition.</p>
+                    <p> Known for his Manhattan hotspot Emilio’s Ballato —a favorite among celebrities like Taylor Swift, Al Pacino, and Gabrielle Union—Chef Vitolo delivers the same warmth and authenticity in every bite. </p>
+
+                    <p>His Neapolitan-inspired dishes celebrate simplicity and quality, from slow-cooked tagliatelle bolognese to crispy, cheesy Italian-American classics. Pair your meal with a handcrafted cocktail like the smoky Emilio’s Manhattan or a refreshing Lena Limon-a for the full experience. </p>
+
+                    <p>Here, it’s not about flashy gimmicks—just honest, flavorful food made with the finest ingredients and a whole lot of love. As Taylor Swift and her friends can attest, once you taste Chef Vitolo’s cooking, you’ll keep coming back for more.</p>
+                    <p>His philosophy is simple: use the finest ingredients, respect traditional techniques, and always cook with love. From handmade pastas to innovative takes on classic recipes, Chef Vitolo's menu is a celebration of Italy's rich culinary heritage.</p>
+                    <p>Join us at Vitolo to experience the artistry and dedication of Chef Anthony Vitolo, where every meal is a journey through the flavors of Italy.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Menu Section -->
-     <!-- Updated Menu Section -->
-     <section class="section menu" id="menu">
+    <!-- Updated Menu Section -->
+    <section class="section menu" id="menu">
         <div class="container">
             <div class="section-title">
                 <h2>Our Menu</h2>
@@ -1340,7 +1310,7 @@
                 <button class="menu-tab" data-category="mare" style="color: white;">Dal Mare</button>
                 <button class="menu-tab" data-category="contorni" style="color: white;">Sides</button>
                 <a href="images/FILE_3798.pdf" class="menu-tab" style="color: white; text-decoration: none;">Download Menu (PDF)</a>
-                
+
             </div>
             <div class="menu-items">
                 <!-- Antipasti -->
@@ -1416,7 +1386,7 @@
                         <p class="menu-item-desc">Topped with sweet & spicy vinegar peppers alongside marinara sauce (D,E,G)</p>
                     </div>
                 </div>
-    
+
                 <!-- Insalate -->
                 <div class="menu-item" data-category="insalate">
                     <div class="menu-item-content">
@@ -1445,7 +1415,7 @@
                         <p class="menu-item-desc">Crispy romaine lettuce with house made Caesar dressing, crispy croutons (D,E,F,G,S)</p>
                     </div>
                 </div>
-    
+
                 <!-- Pizza -->
                 <div class="menu-item" data-category="pizza">
                     <div class="menu-item-content">
@@ -1474,7 +1444,7 @@
                         <p class="menu-item-desc">Baby arugula, fresh basil, mixed greens, mozzarella, Parmesan reggiano, truffle ricotta, sautéed garlic, roasted cherry tomatoes & lemon zest (D,G). Vegan cheese substitute available +$6.</p>
                     </div>
                 </div>
-    
+
                 <!-- Pasta -->
                 <div class="menu-item" data-category="pasta">
                     <div class="menu-item-content">
@@ -1530,7 +1500,7 @@
                         <p class="menu-item-desc">Gluten free gnocchi with choice of sauce</p>
                     </div>
                 </div>
-    
+
                 <!-- Carne -->
                 <div class="menu-item" data-category="carne">
                     <div class="menu-item-content">
@@ -1577,7 +1547,7 @@
                         <p class="menu-item-desc">Lightly floured chicken breast in a white wine lemon sauce (D,E,G)</p>
                     </div>
                 </div>
-    
+
                 <!-- Dal Mare -->
                 <div class="menu-item" data-category="mare">
                     <div class="menu-item-content">
@@ -1624,7 +1594,7 @@
                         <p class="menu-item-desc">Premier hand-selected fish each week by Chef Anthony</p>
                     </div>
                 </div>
-    
+
                 <!-- Sides -->
                 <div class="menu-item" data-category="contorni">
                     <div class="menu-item-content">
@@ -1656,35 +1626,25 @@
             </div>
         </div>
 
+        <!-- Add remaining menu items following the same pattern -->
 
-                <!-- Add remaining menu items following the same pattern -->
+        </div>
 
-                
-
-
-
-
-
-                
-
-            </div>
-            
-            <!-- Allergen Key -->
-            <div class="allergen-key" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
-                <h4 style="color: white;">Allergen Key:</h4>
-                <p style="color: white;">D-Dairy, G-Gluten, E-Eggs, N-Nuts, F-Fish/Shellfish, S-Soy</p>
-                <p style="color: white">
-                    *Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness
-                </p>
-            </div>
+        <!-- Allergen Key -->
+        <div class="allergen-key" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h4 style="color: white;">Allergen Key:</h4>
+            <p style="color: white;">D-Dairy, G-Gluten, E-Eggs, N-Nuts, F-Fish/Shellfish, S-Soy</p>
+            <p style="color: white">
+                *Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness
+            </p>
+        </div>
         </div>
     </section>
 
     <!-- Remaining sections (Gallery, Testimonials, Reservation, Contact, Footer) remain unchanged -->
 
-                  
-            </div>
-        </div>
+    </div>
+    </div>
     </section>
 
     <!-- Gallery Section -->
@@ -1803,7 +1763,7 @@
             <div class="reservation-cta">
                 <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-primary" target="_blank">Reserve on OpenTable</a>
             </div>
-            
+
         </div>
     </section>
 
@@ -1851,8 +1811,6 @@
                     <div class="social-links">
                         <a href="https://www.facebook.com/vitoloitalian" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/vitoloitalian/#" target="_blank"><i class="fab fa-instagram"></i></a>
-<!--                         <a href="https://www.twitter.com/vitoloitalian" target="_blank"><i class="fab fa-twitter"></i></a> -->
-<!--                         <a href="https://www.yelp.com/biz/vitolo-fort-lauderdale" target="_blank"><i class="fab fa-yelp"></i></a> -->
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1874,10 +1832,9 @@
                         <li><a href="#menu" data-category="pasta">Pasta</a></li>
                         <li><a href="#menu" data-category="secondi">Secondi</a></li>
                         <li><a href="#menu" data-category="pizza">Pizza</a></li>
-<!--                         <li><a href="#menu" data-category="dolci">Desserts</a></li> -->
                     </ul>
                 </div>
-                
+
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Vitolo Italian Restaurant. All Rights Reserved. | <a href="#"></a> | <a href="#"></a></p>
@@ -1896,17 +1853,17 @@
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenuClose = document.getElementById('mobileMenuClose');
             const mobileMenu = document.getElementById('mobileMenu');
-            
+
             mobileMenuBtn.addEventListener('click', function() {
                 mobileMenu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
-            
+
             mobileMenuClose.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
-            
+
             // Close mobile menu when clicking on a link
             const mobileMenuLinks = mobileMenu.querySelectorAll('a');
             mobileMenuLinks.forEach(link => {
@@ -1915,7 +1872,7 @@
                     document.body.style.overflow = 'auto';
                 });
             });
-            
+
             // Header scroll effect
             const header = document.getElementById('header');
             window.addEventListener('scroll', function() {
@@ -1925,15 +1882,15 @@
                     header.classList.remove('scrolled');
                 }
             });
-            
+
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
+
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
-                    
+
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
@@ -1943,7 +1900,7 @@
                     }
                 });
             });
-            
+
             // Back to top button
             const backToTop = document.getElementById('backToTop');
             window.addEventListener('scroll', function() {
@@ -1953,28 +1910,28 @@
                     backToTop.classList.remove('active');
                 }
             });
-            
+
             backToTop.addEventListener('click', function() {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             });
-            
+
             // Menu tab functionality
             const menuTabs = document.querySelectorAll('.menu-tab');
             const menuItems = document.querySelectorAll('.menu-item');
-            
+
             menuTabs.forEach(tab => {
                 tab.addEventListener('click', function() {
                     // Remove active class from all tabs
                     menuTabs.forEach(t => t.classList.remove('active'));
-                    
+
                     // Add active class to clicked tab
                     this.classList.add('active');
-                    
+
                     const category = this.getAttribute('data-category');
-                    
+
                     // Show/hide menu items based on category
                     menuItems.forEach(item => {
                         if (category === 'all' || item.getAttribute('data-category') === category) {
@@ -1985,42 +1942,42 @@
                     });
                 });
             });
-            
+
             // Testimonial slider
             const testimonials = document.querySelectorAll('.testimonial');
             const testimonialDots = document.querySelectorAll('.testimonial-dot');
             let currentTestimonial = 0;
-            
+
             function showTestimonial(index) {
                 testimonials.forEach(testimonial => testimonial.classList.remove('active'));
                 testimonialDots.forEach(dot => dot.classList.remove('active'));
-                
+
                 testimonials[index].classList.add('active');
                 testimonialDots[index].classList.add('active');
                 currentTestimonial = index;
             }
-            
+
             testimonialDots.forEach(dot => {
                 dot.addEventListener('click', function() {
                     const index = parseInt(this.getAttribute('data-index'));
                     showTestimonial(index);
                 });
             });
-            
+
             // Auto-rotate testimonials
             setInterval(() => {
                 currentTestimonial = (currentTestimonial + 1) % testimonials.length;
                 showTestimonial(currentTestimonial);
             }, 5000);
         });
-      
-       // Previous JavaScript remains the same
-        
+
+        // Previous JavaScript remains the same
+
         // Add video fallback for mobile devices if needed
         function checkVideoSupport() {
             const video = document.querySelector('.hero-video');
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            
+
             if (isMobile) {
                 // On mobile, you might want to use a poster image instead
                 const poster = video.querySelector('img');
@@ -2038,7 +1995,7 @@
                 });
             }
         }
-        
+
         // Call the function when DOM is loaded
         document.addEventListener('DOMContentLoaded', checkVideoSupport);
     </script>
