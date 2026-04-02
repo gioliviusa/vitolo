@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitolo | Authentic Italian Restaurant | Fort Lauderdale Beach</title>
+    <link rel="stylesheet" href="css/accessibility.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <style>
         :root {
             --primary: #c1121f;
@@ -18,7 +19,7 @@
             --light: #ffffff;
             --gold: #d4a017;
             --text: #333333;
-            --text-light: #777777;
+            --text-light: #555555;
         }
 
         * {
@@ -32,6 +33,7 @@
             height: 100vh;
             overflow: hidden;
         }
+
 
         .video-background {
             position: absolute;
@@ -277,7 +279,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.75);
             z-index: -1;
         }
 
@@ -432,6 +434,7 @@
             background-color: transparent;
             position: relative;
             z-index: 1;
+            color: white;
         }
 
         .menu-tabs {
@@ -440,6 +443,7 @@
             margin-bottom: 40px;
             flex-wrap: wrap;
             gap: 10px;
+            color: white;
         }
 
         .menu-tab {
@@ -450,9 +454,10 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 16px;
-            color: var(--text-light);
+            color: white;;
             cursor: pointer;
             transition: all 0.3s ease;
+
         }
 
         .menu-tab.active {
@@ -1160,8 +1165,11 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Header -->
+    
     <header id="header">
+        <main id="main">
         <div class="container header-container">
             <a href="#home" class="logo">
                 <img src="images/Vitologo_logo.png" alt="Vitolo Italian Restaurant">
@@ -1180,8 +1188,13 @@
                     <li><a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="nav-cta" target="_blank">Book</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
+                    <button 
+                    class="mobile-menu-btn" 
+                    id="mobileMenuBtn" 
+                    aria-label="Open menu"
+                    aria-expanded="false">
+
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
     </header>
@@ -1189,7 +1202,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileMenuClose">
-            <i class="fas fa-times"></i>
+            <i class="fas fa-times" aria-hidden="true"></i>
         </button>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -1224,12 +1237,13 @@
     </section>
 
     <section class="hero">
-        <div class="video-container">
-            <video autoplay loop muted playsinline class="video-background">
-                <source src="images/vitolo_short3-30sec.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+            <div class="video-container">
+                <video autoplay loop muted playsinline 
+                    class="video-background"
+                    aria-hidden="true">
+                    <source src="images/vitolo_short3-30sec.mp4" type="video/mp4">
+                </video>
+            </div>
         <div class="container">
             <div class="hero-content">
                 <h1>Authentic Italian Cuisine in Fort Lauderdale Beach</h1>
@@ -1241,7 +1255,7 @@
             </div>
         </div>
         <a href="#about" class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
         </a>
     </section>
 
@@ -1302,13 +1316,13 @@
                 <p style="color: white;">Explore our selection of authentic Italian dishes crafted with passion and the finest ingredients.</p>
             </div>
             <div class="menu-tabs">
-                <button class="menu-tab active" data-category="antipasti" style="color: white;">Antipasti</button>
-                <button class="menu-tab" data-category="insalate" style="color: white;">Insalate</button>
-                <button class="menu-tab" data-category="pizza" style="color: white;">Pizza</button>
-                <button class="menu-tab" data-category="pasta" style="color: white;">Pasta</button>
-                <button class="menu-tab" data-category="carne" style="color: white;">Carne</button>
-                <button class="menu-tab" data-category="mare" style="color: white;">Dal Mare</button>
-                <button class="menu-tab" data-category="contorni" style="color: white;">Sides</button>
+                <button class="menu-tab active" data-category="antipasti" >Antipasti</button>
+                <button class="menu-tab" data-category="insalate" >Insalate</button>
+                <button class="menu-tab" data-category="pizza" >Pizza</button>
+                <button class="menu-tab" data-category="pasta" >Pasta</button>
+                <button class="menu-tab" data-category="carne" >Carne</button>
+                <button class="menu-tab" data-category="mare" >Dal Mare</button>
+                <button class="menu-tab" data-category="contorni" >Sides</button>
                 <a href="images/Brochures_22x17.pdf" class="menu-tab" style="color: white; text-decoration: none;">Download Menu (PDF)</a>
 
             </div>
@@ -1698,35 +1712,35 @@ caper butter</p>
                 <div class="gallery-item">
                     <img src="images/vitolokitchen.png" alt="Restaurant Interior">
                     <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- Gallery Item 2 -->
                 <div class="gallery-item">
                     <img src="images/vitoloout.png" alt="Outdoor Dining Area">
                     <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- Gallery Item 3 -->
                 <div class="gallery-item">
                     <img src="images/vitolomain.png" alt="Main Dining Area">
                     <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- Gallery Item 4 -->
                 <div class="gallery-item">
                     <img src="images/libraryvitolo.jpg" alt="Chef Preparing Food">
                     <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- Gallery Item 5 -->
                 <div class="gallery-item">
                     <img src="images/chikenparmvitolo.jpg" alt="Delicious Chicken Parmigiana">
                     <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -1815,22 +1829,22 @@ caper butter</p>
             </div>
             <div class="contact-info">
                 <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <h3>Location</h3>
                     <p>Conrad Fort Lauderdale Beach<br>551 N Fort Lauderdale Beach Blvd<br>Fort Lauderdale, FL 33304</p>
                 </div>
                 <div class="contact-card">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
                     <h3>Phone</h3>
                     <p><a href="tel:+19544145127">(954) 414-5127</a></p>
                 </div>
                 <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <h3>Email</h3>
                     <p><a href="mailto:info@vitoloitaliano.com">info@vitoloitaliano.com</a></p>
                 </div>
                 <div class="contact-card">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
                     <h3>Hours</h3>
                     <p><strong>Monday - Thursday:</strong> 4:00 PM - 10:00 PM</p>
                     <p><strong>Friday:</strong> 4:00 PM - 11:00 PM</p>
@@ -1849,8 +1863,8 @@ caper butter</p>
                     <h3>About Vitolo</h3>
                     <p>Vitolo brings authentic Italian cuisine to Fort Lauderdale Beach, combining traditional recipes with modern techniques for an unforgettable dining experience.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/vitoloitalian" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/vitoloitalian/#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/vitoloitalian" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"  aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/vitoloitalian/#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"  aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1877,14 +1891,15 @@ caper butter</p>
 
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Vitolo Italian Restaurant. All Rights Reserved. | <a href="https://apexstryke.com/" style="color: #969696; text-decoration: none;"> Powered by ApexStryke</a> | <a href="#"></a></p>
+                <p>&copy; 2026 Vitolo Italian Restaurant. All Rights Reserved. | <a href="https://apexstryke.com/" style="color: #969696; text-decoration: none;"> Powered by ApexStryke</a> |</p>
             </div>
         </div>
+    </main>
     </footer>
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </div>
 
     <script>
@@ -1897,11 +1912,15 @@ caper butter</p>
             mobileMenuBtn.addEventListener('click', function() {
                 mobileMenu.classList.add('active');
                 document.body.style.overflow = 'hidden';
+
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
             });
 
             mobileMenuClose.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = 'auto';
+
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
 
             // Close mobile menu when clicking on a link
@@ -2039,5 +2058,25 @@ caper butter</p>
         // Call the function when DOM is loaded
         document.addEventListener('DOMContentLoaded', checkVideoSupport);
     </script>
+
+    <div id="accessibility-widget">
+  <button id="togglePanel">♿</button>
+
+  <div id="panel" hidden>
+    <h3>Accessibility</h3>
+
+<div class="zoom-controls">
+  <button onclick="zoomIn()">A+</button>
+  <button onclick="zoomOut()">A-</button>
+</div>
+
+<button onclick="toggleContrast()">High Contrast</button>
+<button onclick="toggleLinks()">Highlight Links</button>
+<button onclick="toggleSpacing()">Text Spacing</button>
+<button onclick="pauseAnimations()">Pause Animations</button>
+     </div>
+    </div>
+    <script src="js/accessibility.js"></script>
+
 </body>
 </html>
