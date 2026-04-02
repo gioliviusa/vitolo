@@ -666,7 +666,7 @@
         }
 
         .testimonial-author-info p {
-            color: var(--primary);
+            color: white;
             font-size: 14px;
         }
 
@@ -697,11 +697,11 @@
         }
 
         .reservation .section-title h2 {
-            color: var(--light);
+            color: white;
         }
 
         .reservation .section-title p {
-            color: rgba(255, 255, 255, 0.7);
+            color: white;
         }
 
         .reservation-form {
@@ -1216,12 +1216,14 @@
     <!-- MAIN -->
     <main id="main" tabindex="-1">
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-<button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
-  ✕
-</button>
+    <div 
+        class="mobile-menu" 
+        id="mobileMenu" 
+        role="dialog" 
+        aria-modal="true"
+        tabindex="-1">
+<button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"> </button>
             
-        </button>
         <ul>
             <li><a href="#main">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -1253,8 +1255,18 @@
                 <h1>Authentic Italian Cuisine in Fort Lauderdale Beach</h1>
                 <p>Experience the taste of Italy with our handcrafted dishes made from the finest ingredients. Located in the Conrad Fort Lauderdale Beach, Vitolo offers an unforgettable dining experience.</p>
                 <div class="hero-btns">
-                    <a href="#menu" class="btn btn-primary">View Menu</a>
-                    <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-secondary" target="_blank">Reserve a Table</a>
+                    <a href="#menu" class="btn btn-primary" aria-label="View Menu (full dinner menu)">View Menu</a>
+                        <a 
+                        href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website"
+                        class="btn btn-primary"
+                        target="_blank"
+                        aria-describedby="reserve-desc">
+                        Reserve on OpenTable
+                        </a>
+
+                        <span id="reserve-desc" class="visually-hidden">
+                        Opens in a new tab
+                        </span>
                 </div>
             </div>
         </div>
@@ -1327,13 +1339,18 @@
                 <button class="menu-tab" data-category="carne" >Carne</button>
                 <button class="menu-tab" data-category="mare" >Dal Mare</button>
                 <button class="menu-tab" data-category="contorni" >Sides</button>
-                <a href="images/Brochures_22x17.pdf"
+                <a 
+                href="images/Brochures_22x17.pdf"
                 class="menu-tab"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Download menu in PDF format">
+                aria-describedby="menu-desc">
                 Download Menu (PDF)
                 </a>
+
+                <span id="menu-desc" class="visually-hidden">
+                Opens in a new tab
+                </span>
 
             </div>
             <div class="menu-items">
@@ -1766,9 +1783,9 @@ caper butter</p>
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial active">
-                    <div class="testimonial-text">
+                    <blockquote  class="testimonial-text">
                         The best Italian food I've had outside of Italy! The pasta was perfectly al dente and the flavors were incredible. The service was impeccable and the atmosphere was perfect for our anniversary dinner.
-                    </div>
+                    </blockquote >
                     <div class="testimonial-author">
                         <div class="testimonial-author-img">
                             <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
@@ -1780,9 +1797,9 @@ caper butter</p>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <div class="testimonial-text">
+                    <blockquote class="testimonial-text">
                         As an Italian expat, I'm very particular about my Italian food. Vitolo exceeded all my expectations. The osso buco was tender and flavorful, just like my nonna used to make. I'll definitely be back!
-                    </div>
+                    </blockquote >
                     <div class="testimonial-author">
                         <div class="testimonial-author-img">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marco Rossi">
@@ -1794,9 +1811,9 @@ caper butter</p>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <div class="testimonial-text">
+                    <blockquote  class="testimonial-text">
                         We hosted our company dinner at Vitolo and it was a fantastic experience. The private dining area was beautiful, the food was outstanding, and the staff handled everything perfectly. Highly recommend for business or pleasure!
-                    </div>
+                    </blockquote >
                     <div class="testimonial-author">
                         <div class="testimonial-author-img">
                             <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Lee">
@@ -1824,7 +1841,14 @@ caper butter</p>
                 <p>Book your table at Vitolo for an unforgettable Italian dining experience.</p>
             </div>
             <div class="reservation-cta">
-                <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-primary" target="_blank" aria-label="Reserve a table via OpenTable">Reserve on OpenTable</a>
+                <a 
+                href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Reserve on OpenTable (book a table)">
+                Reserve on OpenTable
+                </a>
             </div>
 
         </div>
@@ -1913,161 +1937,235 @@ caper butter</p>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu Toggle
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenuClose = document.getElementById('mobileMenuClose');
-            const mobileMenu = document.getElementById('mobileMenu');
+document.addEventListener('DOMContentLoaded', function() {
 
-            mobileMenuBtn.addEventListener('click', function() {
-                mobileMenu.classList.add('active');
-                document.body.style.overflow = 'hidden';
+    /* =========================
+       MOBILE MENU (ACCESSIBLE)
+    ========================== */
 
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-            });
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-            mobileMenuClose.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
+    // Open mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
 
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            });
+        // Update ARIA state
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
 
-            // Close mobile menu when clicking on a link
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            });
+        // Move focus to the menu container
+        mobileMenu.focus();
+    });
 
-            // Header scroll effect
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
+    // Close menu (X button)
+    mobileMenuClose.addEventListener('click', function() {
+        closeMenu();
+    });
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
+    // Close menu with ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
 
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('active');
-                } else {
-                    backToTop.classList.remove('active');
-                }
-            });
-
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Menu tab functionality
-            const menuTabs = document.querySelectorAll('.menu-tab');
-            const menuItems = document.querySelectorAll('.menu-item');
-
-            menuTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Remove active class from all tabs
-                    menuTabs.forEach(t => t.classList.remove('active'));
-
-                    // Add active class to clicked tab
-                    this.classList.add('active');
-
-                    const category = this.getAttribute('data-category');
-
-                    // Show/hide menu items based on category
-                    menuItems.forEach(item => {
-                        if (category === 'all' || item.getAttribute('data-category') === category) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Testimonial slider
-            const testimonials = document.querySelectorAll('.testimonial');
-            const testimonialDots = document.querySelectorAll('.testimonial-dot');
-            let currentTestimonial = 0;
-
-            function showTestimonial(index) {
-                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-                testimonialDots.forEach(dot => dot.classList.remove('active'));
-
-                testimonials[index].classList.add('active');
-                testimonialDots[index].classList.add('active');
-                currentTestimonial = index;
-            }
-
-            testimonialDots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    showTestimonial(index);
-                });
-            });
-
-            // Auto-rotate testimonials
-            setInterval(() => {
-                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-                showTestimonial(currentTestimonial);
-            }, 5000);
+    // Close menu when clicking a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMenu();
         });
+    });
 
-        // Previous JavaScript remains the same
+    // Function to close menu (reusable)
+    function closeMenu() {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
 
-        // Add video fallback for mobile devices if needed
-        function checkVideoSupport() {
-            const video = document.querySelector('.hero-video');
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
 
-            if (isMobile) {
-                // On mobile, you might want to use a poster image instead
-                const poster = video.querySelector('img');
-                if (poster) {
-                    video.parentNode.replaceChild(poster, video);
-                }
-            } else {
-                // Ensure video plays on desktop
-                video.play().catch(e => {
-                    console.log("Video autoplay prevented, showing fallback image");
-                    const poster = video.querySelector('img');
-                    if (poster) {
-                        video.parentNode.replaceChild(poster, video);
-                    }
-                });
+        // Return focus to the button
+        mobileMenuBtn.focus();
+    }
+
+    // Focus trap inside mobile menu (keyboard accessibility)
+    mobileMenu.addEventListener('keydown', function(e) {
+        if (e.key !== 'Tab') return;
+
+        const focusable = mobileMenu.querySelectorAll(
+            'a, button, input, [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        // Shift + Tab
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            }
+        } 
+        // Tab forward
+        else {
+            if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
             }
         }
+    });
 
-        // Call the function when DOM is loaded
-        document.addEventListener('DOMContentLoaded', checkVideoSupport);
-    </script>
+    /* =========================
+       HEADER SCROLL EFFECT
+    ========================== */
+
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    /* =========================
+       SMOOTH SCROLL
+    ========================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.focus(); // accessibility improvement
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    /* =========================
+       BACK TO TOP BUTTON
+    ========================== */
+
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    /* =========================
+       MENU FILTER TABS
+    ========================== */
+
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+
+            // Remove active state
+            menuTabs.forEach(t => t.classList.remove('active'));
+
+            // Add active state
+            this.classList.add('active');
+
+            const category = this.getAttribute('data-category');
+
+            // Filter items
+            menuItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    /* =========================
+       TESTIMONIAL SLIDER
+    ========================== */
+
+    const testimonials = document.querySelectorAll('.testimonial');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+        testimonials.forEach(t => t.classList.remove('active'));
+        testimonialDots.forEach(d => d.classList.remove('active'));
+
+        testimonials[index].classList.add('active');
+        testimonialDots[index].classList.add('active');
+
+        currentTestimonial = index;
+    }
+
+    testimonialDots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            showTestimonial(index);
+        });
+    });
+
+    // ⚠️ Auto-rotation (consider adding pause button for WCAG)
+    setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+    }, 5000);
+
+});
+
+/* =========================
+   VIDEO FALLBACK
+========================== */
+
+function checkVideoSupport() {
+    const video = document.querySelector('.hero-video');
+
+    if (!video) return;
+
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        const poster = video.querySelector('img');
+        if (poster) {
+            video.parentNode.replaceChild(poster, video);
+        }
+    } else {
+        video.play().catch(() => {
+            console.log("Autoplay blocked, showing fallback image");
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', checkVideoSupport);
+</script>
+
 
  ```html
 <div id="accessibility-widget">
