@@ -1171,12 +1171,12 @@
     <header id="header">
         <main id="main">
         <div class="container header-container">
-            <a href="#home" class="logo">
+            <a href="#main" class="logo">
                 <img src="images/Vitologo_logo.png" alt="Vitolo Italian Restaurant">
             </a>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#main">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#chef-anthony">Chef</a></li>
                     <li><a href="#menu">Menu</a></li>
@@ -1201,11 +1201,13 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileMenuClose">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        ✕
+        </button>
             <i class="fas fa-times" aria-hidden="true"></i>
         </button>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#main">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#chef-anthony">Chef</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -1238,10 +1240,8 @@
 
     <section class="hero">
             <div class="video-container">
-                <video autoplay loop muted playsinline 
-                    class="video-background"
-                    aria-hidden="true">
-                    <source src="images/vitolo_short3-30sec.mp4" type="video/mp4">
+                <video autoplay loop muted playsinline preload="none" class="video-background" aria-hidden="true">
+                    <source src="images/vitolo_short3-30sec.mp4" type="video/mp4"> Your browser does not support the video tag.
                 </video>
             </div>
         <div class="container">
@@ -1254,9 +1254,9 @@
                 </div>
             </div>
         </div>
-        <a href="#about" class="scroll-down">
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-        </a>
+            <a href="#about" class="scroll-down" aria-label="Scroll to about section">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
     </section>
 
     <!-- About Section -->
@@ -1323,7 +1323,13 @@
                 <button class="menu-tab" data-category="carne" >Carne</button>
                 <button class="menu-tab" data-category="mare" >Dal Mare</button>
                 <button class="menu-tab" data-category="contorni" >Sides</button>
-                <a href="images/Brochures_22x17.pdf" class="menu-tab" style="color: white; text-decoration: none;">Download Menu (PDF)</a>
+                <a href="images/Brochures_22x17.pdf"
+                class="menu-tab"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download menu in PDF format">
+                Download Menu (PDF)
+                </a>
 
             </div>
             <div class="menu-items">
@@ -1764,7 +1770,7 @@ caper butter</p>
                             <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
                         </div>
                         <div class="testimonial-author-info">
-                            <h4>Sarah Johnson</h4>
+                            <h3>Sarah Johnson</h3>
                             <p>Fort Lauderdale, FL</p>
                         </div>
                     </div>
@@ -1778,7 +1784,7 @@ caper butter</p>
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marco Rossi">
                         </div>
                         <div class="testimonial-author-info">
-                            <h4>Marco Rossi</h4>
+                            <h3>Marco Rossi</h3>
                             <p>Miami, FL</p>
                         </div>
                     </div>
@@ -1792,7 +1798,7 @@ caper butter</p>
                             <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Lee">
                         </div>
                         <div class="testimonial-author-info">
-                            <h4>Jennifer Lee</h4>
+                            <h3>Jennifer Lee</h3>
                             <p>CEO, Tech Solutions</p>
                         </div>
                     </div>
@@ -1814,7 +1820,7 @@ caper butter</p>
                 <p>Book your table at Vitolo for an unforgettable Italian dining experience.</p>
             </div>
             <div class="reservation-cta">
-                <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-primary" target="_blank">Reserve on OpenTable</a>
+                <a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="btn btn-primary" target="_blank" aria-label="Reserve a table via OpenTable">Reserve on OpenTable</a>
             </div>
 
         </div>
@@ -1870,7 +1876,7 @@ caper butter</p>
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="#main">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#menu">Menu</a></li>
                         <li><a href="#gallery">Gallery</a></li>
