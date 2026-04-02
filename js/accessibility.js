@@ -61,3 +61,17 @@ document.addEventListener("keydown", function(e) {
     if (panel) panel.hidden = true;
   }
 });
+
+
+document.addEventListener("click", (e) => {
+  const panel = document.getElementById("panel");
+  const toggle = document.getElementById("togglePanel");
+
+  if (!panel || !toggle) return;
+
+  // jeśli kliknięto poza panelem i przyciskiem
+  if (!panel.contains(e.target) && !toggle.contains(e.target)) {
+    panel.hidden = true;
+  }
+});
+
