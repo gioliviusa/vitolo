@@ -1179,15 +1179,18 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- 🔊 Screen reader announcer -->
+    <div id="sr-announcer" aria-live="polite" class="sr-only"></div>
+
     <!-- Header -->
-    
     <header id="header">
-        <main id="main">
         <div class="container header-container">
             <a href="#main" class="logo">
-                <img src="images/Vitologo_logo.png" alt="Vitolo Italian Restaurant">
+                <img src="images/Vitologo_logo.png" alt="Vitolo Italian Restaurant logo">
             </a>
-            <nav>
+
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="#main">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -1196,28 +1199,28 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#reservation">Reservations</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="aperitivo.html">Aperitivo</a></li>
-                    <li><a href="https://ecommerce.custcon.com/Purchase/Select?c=03fcb339-8046-45b0-bfc2-ac5dffc1fbd4">Gift Cards</a></li>
-                    <li><a href="https://www.opentable.com/r/vitolo-reservations-fort-lauderdale?restref=1323337&lang=en-US&ot_source=Restaurant%20website" class="nav-cta" target="_blank">Book</a></li>
                 </ul>
             </nav>
-                    <button 
-                    class="mobile-menu-btn" 
-                    id="mobileMenuBtn" 
-                    aria-label="Open menu"
-                    aria-expanded="false">
 
+            <button 
+                class="mobile-menu-btn" 
+                id="mobileMenuBtn" 
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
     </header>
 
+    <!-- MAIN -->
+    <main id="main" tabindex="-1">
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
-        ✕
-        </button>
-            <i class="fas fa-times" aria-hidden="true"></i>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+<button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+  ✕
+</button>
+            
         </button>
         <ul>
             <li><a href="#main">Home</a></li>
@@ -1233,22 +1236,10 @@
         </ul>
     </div>
 
-    <!-- Hero Section -->
-    <!-- Hero Section with YouTube Background Video -->
-    <section class="hero">
-        <div class="video-background">
-            <!-- <iframe -->
-            <!-- src="#" -->
-            <!-- frameborder="0" -->
-            <!-- allow="autoplay; encrypted-media" -->
-            <!-- allowfullscreen -->
-            <!-- ></iframe> -->
-        </div>
-        <!--   <div class="hero-content">
-      <h1>Your compelling headline here</h1>
-      <p>Your engaging subtitle text goes here</p>
-      <a href="#cta" class="cta-button">Call to Action</a>
-      </div> -->
+    <section class="hero hero-video-only">
+    <video autoplay loop muted playsinline preload="auto" class="video-background" aria-hidden="true">
+        <source src="images/vitolo_short3-30sec.mp4" type="video/mp4"> Your browser does not support the video tag.
+    </video>
     </section>
 
     <section class="hero">
@@ -2078,26 +2069,58 @@ caper butter</p>
         document.addEventListener('DOMContentLoaded', checkVideoSupport);
     </script>
 
-    <div id="accessibility-widget">
-  <button id="togglePanel" aria-label="Accessibility settings">
-  <i class="fas fa-universal-access"></i>
-</button>
+ ```html
+<div id="accessibility-widget">
+  <button id="togglePanel"
+        aria-label="Open accessibility settings"
+        aria-expanded="false"
+        aria-controls="panel">
+    <i class="fas fa-universal-access"></i>
+  </button>
 
-  <div id="panel" hidden>
+  <div id="panel" hidden role="region" aria-label="Accessibility settings panel" tabindex="-1">
     <h3>Accessibility</h3>
 
-<div class="zoom-controls">
-  <button onclick="zoomIn()">A+</button>
-  <button onclick="zoomOut()">A-</button>
+    <div class="zoom-controls">
+      <button onclick="zoomIn()" aria-pressed="false">A+</button>
+      <button onclick="zoomOut()" aria-pressed="false">A-</button>
+    </div>
+
+    <button onclick="toggleContrast()" aria-pressed="false">High Contrast</button>
+    <button onclick="toggleLinks()" aria-pressed="false">Highlight Links</button>
+    <button onclick="toggleSpacing()" aria-pressed="false">Text Spacing</button>
+    <button onclick="pauseAnimations()" aria-pressed="false">Pause Animations</button>
+    <button onclick="toggleScreenReaderMode()" aria-pressed="false">Screen Reader</button>
+    <button onclick="toggleImages()" aria-pressed="false">Hide Images</button>
+    <button onclick="toggleDyslexia()" aria-pressed="false">Dyslexia Friendly</button>
+
+    <button onclick="showStructure(event)">Page Structure</button>
+
+    <button onclick="toggleLineHeight()" aria-pressed="false">Line Height</button>
+    <button onclick="toggleAlign()" aria-pressed="false">Text Align</button>
+    <button onclick="toggleSaturation()" aria-pressed="false">Saturation</button>
+
+    <!-- 🔥 RESET we właściwym miejscu -->
+    <button onclick="resetAccessibility()" class="reset-btn">♻️ Reset</button>
+  </div>
 </div>
 
-<button onclick="toggleContrast()">High Contrast</button>
-<button onclick="toggleLinks()">Highlight Links</button>
-<button onclick="toggleSpacing()">Text Spacing</button>
-<button onclick="pauseAnimations()">Pause Animations</button>
-     </div>
-    </div>
-    <script src="js/accessibility.js"></script>
+<script src="js/accessibility.js"></script>
+
+<!-- 📑 POPUP STRUCTURE -->
+<div id="structurePopup" hidden>
+  <div class="structure-content">
+    
+    <button class="close-btn" onclick="closeStructure()">✕</button>
+
+    <h3>Page Structure</h3>
+
+    <ul id="structureList" class="tree"></ul>
+
+  </div>
+</div>
+```
+
 
 </body>
 </html>
