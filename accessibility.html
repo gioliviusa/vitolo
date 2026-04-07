@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement – Vitolo</title>
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #c1121f;
+            --primary-dark: #780000;
+            --secondary: #fdf0d5;
+            --dark: #003049;
+            --light: #ffffff;
+            --gold: #d4a017;
+            --text: #333333;
+            --text-light: #555555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* Desktop enhancements */
+        @media (min-width: 768px) {
+            .video-container iframe {
+                width: 100vw;
+                height: 56.25vw; /* 16:9 aspect ratio */
+                min-height: 100vh;
+                min-width: 177.77vh; /* 16:9 aspect ratio */
+            }
+
+            .hero-content {
+                padding-top: 25vh;
+            }
+        }
+
+        /* Mobile landscape adjustment */
+        @media (max-height: 480px) and (orientation: landscape) {
+            .hero-content {
+                padding-top: 10vh;
+            }
+        }
+
+        /* Optional: Add backdrop for better text contrast */
+        /* .hero-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: -1;
+        } */
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+        }
+
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header:not(.scrolled) {
+        background-color: rgba(0,0,0,0.6);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        a:focus,
+button:focus {
+    outline: 3px solid #d4a017;
+    outline-offset: 2px;
+}
+
+        .nav-cta {
+            background-color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .nav-cta:after {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            color: var(--light);
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Rest of the CSS remains the same */
+
+        .hero h1 {
+            font-size: 72px;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-down {
+            display: none;
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 15px auto 0;
+            line-height: 1.6;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--dark);
+        }
+
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 30px;
+            color: var(--light);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 30px;
+        }
+
+        .mobile-menu ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-img,
+            .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .reservation-form {
+                padding: 30px 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+        }
+
+        /* Further adjustments to ensure the hero section is fully visible */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 5%;
+            max-width: 800px;
+            margin: auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-content {
+                padding-top: 15vh;
+            }
+        }
+
+        /* Centering the reservation button */
+        .reservation-cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Updated background for Our Story section */
+        #about {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        #about .section-title h2 {
+            color: var(--primary);
+        }
+
+        #about .section-title p {
+            color: var(--text);
+        }
+
+        #about .about-text p {
+            color: var(--text);
+        }
+
+        /* Updated background for Chef Anthony Vitolo section */
+        #chef-anthony {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        #chef-anthony .section-title h2 {
+            color: var(--primary);
+        }
+
+        #chef-anthony .section-title p {
+            color: var(--text);
+        }
+
+        #chef-anthony .about-text p {
+            color: var(--text);
+        }
+
+        #menu .section-title h2,
+        #gallery .section-title h2 {
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+    </style>
+    </head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="sr-announcer" aria-live="polite" class="sr-only"></div>
+
+<header id="header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="images/Vitologo_logo.png" alt="Vitolo logo">
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html#main">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#chef-anthony">Chef</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#reservation">Reservations</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section class="section" style="margin-top:120px;">
+    <div class="container" style="max-width:900px; text-align:center;">
+
+        <div class="section-title">
+            <h2>Accessibility</h2>
+            <p>We are committed to ensuring an inclusive and accessible digital experience for all users.</p>
+        </div>
+
+        <div class="about-text">
+
+            <h3>Accessibility Statement</h3>
+            <p>
+                Vitolo is committed to ensuring digital accessibility for all users, including people with disabilities.
+                We continuously work to improve the user experience for everyone and apply relevant accessibility standards to achieve this goal.
+            </p>
+
+            <p>
+                Accessibility is not a one-time effort, but an ongoing process. We are dedicated to regularly monitoring,
+                updating, and improving our website to make it more accessible, inclusive, and user-friendly.
+            </p>
+
+            <h3>Our Commitment</h3>
+            <p>
+                We believe that every person has the right to access digital content with dignity, equality, comfort,
+                and independence. Our website is designed to support a wide range of users, including those who rely on assistive technologies.
+            </p>
+
+            <h3>Accessibility Features</h3>
+            <ul style="list-style:none; padding:0; line-height:1.8;">
+                <li>✔ Text size adjustment</li>
+                <li>✔ High contrast mode</li>
+                <li>✔ Highlighting links</li>
+                <li>✔ Dyslexia-friendly font</li>
+                <li>✔ Increased spacing and line height</li>
+                <li>✔ Ability to pause animations</li>
+                <li>✔ Screen reader support</li>
+                <li>✔ Keyboard navigation improvements</li>
+            </ul>
+        </br>
+            <h3>Standards & Guidelines</h3>
+            <p>
+                We aim to follow best practices and standards defined by the Web Content Accessibility Guidelines (WCAG),
+                developed by the World Wide Web Consortium (W3C).
+            </p>
+
+            <p>
+                While we strive to meet WCAG 2.1 Level AA standards, accessibility is an ongoing effort,
+                and we continue to improve our website over time.
+            </p>
+
+            <h3>Continuous Improvement</h3>
+            <p>
+                We regularly review our website using accessibility tools and manual testing to identify and fix potential issues.
+                Our goal is to ensure that all users can access our content without barriers.
+            </p>
+
+            <!--  CONTACT SECTION -->
+            <h3>Please Contact Us</h3>
+            <p>
+                We are here to assist you and make your experience as smooth and inclusive as possible.
+                If you encounter any digital accessibility issues with our services or need information related to accessibility,
+                we want to hear from you.
+            </p>
+
+            <p>
+                We appreciate your feedback and are always open to suggestions for improving accessibility.
+            </p>
+
+            <p style="margin-top:20px;">
+                <strong>Vitolo Restaurant</strong><br>
+                Email: <a href="mailto:info@vitolorestaurant.com">info@vitolorestaurant.com</a>
+            </p>
+
+            <p>
+                We take accessibility seriously and will get back to you shortly.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+   <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    /* =========================
+       MOBILE MENU (ACCESSIBLE)
+    ========================== */
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Open mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Update ARIA state
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+
+        // Move focus to the menu container
+        mobileMenu.focus();
+    });
+
+    // Close menu (X button)
+    mobileMenuClose.addEventListener('click', function() {
+        closeMenu();
+    });
+
+    // Close menu with ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    // Close menu when clicking a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMenu();
+        });
+    });
+
+    // Function to close menu (reusable)
+    function closeMenu() {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+        // Return focus to the button
+        mobileMenuBtn.focus();
+    }
+
+    // Focus trap inside mobile menu (keyboard accessibility)
+    mobileMenu.addEventListener('keydown', function(e) {
+        if (e.key !== 'Tab') return;
+
+        const focusable = mobileMenu.querySelectorAll(
+            'a, button, input, [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        // Shift + Tab
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            }
+        } 
+        // Tab forward
+        else {
+            if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
+    /* =========================
+       HEADER SCROLL EFFECT
+    ========================== */
+
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    /* =========================
+       SMOOTH SCROLL
+    ========================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.focus(); // accessibility improvement
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+}); 
+
+</script>
+
+
+<script src="js/accessibility.js"></script>
+
+<div id="accessibility-widget">
+     <button id="togglePanel"
+        aria-label="Open accessibility settings"
+        aria-expanded="false"
+        aria-controls="panel">
+    <i class="fas fa-universal-access"></i>
+  </button>
+
+    <div id="panel" hidden tabindex="-1">
+        <h3>Accessibility</h3>
+
+                <div class="zoom-controls">
+            <button onclick="zoomIn()">A+</button>
+            <button onclick="zoomOut()">A-</button>
+        </div>
+
+        <button onclick="toggleContrast()" aria-pressed="false">High Contrast</button>
+        <button onclick="toggleLinks()" aria-pressed="false">Highlight Links</button>
+        <button onclick="toggleSpacing()" aria-pressed="false">Text Spacing</button>
+        <button onclick="toggleImages()" aria-pressed="false">Hide Images</button>
+
+
+
+        <button onclick="toggleDyslexia()" aria-pressed="false">Dyslexia Mode</button>
+        <button onclick="toggleLineHeight()" aria-pressed="false">Line Height</button>
+        <button onclick="toggleAlign()" aria-pressed="false">Center Text</button>
+        <button onclick="toggleSaturation()" aria-pressed="false">Low Saturation</button>
+
+        <button onclick="toggleScreenReaderMode()" aria-pressed="false">Screen Reader</button>
+        <button onclick="pauseAnimations()" aria-pressed="false">Pause Animations</button>
+
+        <button onclick="showStructure(event)">Page Structure</button>
+
+        <button class="reset-btn" onclick="resetAccessibility()">Reset</button>
+    </div>
+</div>
+
+</body>
+</html>
